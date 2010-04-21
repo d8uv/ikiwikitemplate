@@ -1,22 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!DOCTYPE html>
+<link rel="stylesheet" href="/doc.css">
 <title><TMPL_VAR TITLE></title>
-<TMPL_IF NAME="FAVICON">
-<link rel="icon" href="<TMPL_VAR BASEURL><TMPL_VAR FAVICON>" type="image/x-icon" />
-</TMPL_IF>
-<link rel="stylesheet" href="<TMPL_VAR BASEURL>style.css" type="text/css" />
-<link rel="stylesheet" href="<TMPL_VAR BASEURL>local.css" type="text/css" />
+
 <TMPL_IF NAME="EDITURL">
 <link rel="alternate" type="application/x-wiki" title="Edit this page" href="<TMPL_VAR EDITURL>" />
 </TMPL_IF>
-<TMPL_IF NAME="FEEDLINKS"><TMPL_VAR FEEDLINKS></TMPL_IF>
-<TMPL_IF NAME="RELVCS"><TMPL_VAR RELVCS></TMPL_IF>
-<TMPL_IF NAME="META"><TMPL_VAR META></TMPL_IF>
-</head>
-<body>
 
 <div class="pageheader">
 <div class="header">
