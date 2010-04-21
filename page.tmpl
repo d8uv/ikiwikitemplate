@@ -3,131 +3,48 @@
 <title><TMPL_VAR TITLE></title>
 
 <TMPL_IF NAME="EDITURL">
-<link rel="alternate" type="application/x-wiki" title="Edit this page" href="<TMPL_VAR EDITURL>" />
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="<TMPL_VAR EDITURL>">
+</TMPL_IF>
+<TMPL_IF NAME="PREFSURL">
+<link rel="alternate" type="application/x-wiki" title="Preferences" href="<TMPL_VAR PREFSURL>">
 </TMPL_IF>
 
-<TMPL_IF SIDEBAR>
-<div id="sidebar">
-<TMPL_VAR SIDEBAR>
-</div>
-</TMPL_IF>
 
-<div id="content">
 <TMPL_VAR CONTENT>
-</div>
-
-<TMPL_IF COMMENTS>
-<div id="comments">
-<TMPL_VAR COMMENTS>
-<TMPL_IF ADDCOMMENTURL>
-<div class="addcomment">
-<a href="<TMPL_VAR ADDCOMMENTURL>">Add a comment</a>
-</div>
-<TMPL_ELSE>
-<div class="addcomment">Comments on this page are closed.</div>
-</TMPL_IF>
-</div>
-</TMPL_IF>
 
 <footer>
 
-<div class="pageheader">
-<div class="header">
-<span>
-<span class="parentlinks">
+<h1>
+This is:
 <TMPL_LOOP NAME="PARENTLINKS">
 <a href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a>/
 </TMPL_LOOP>
-</span>
-<span class="title">
 <TMPL_VAR TITLE>
-</span>
-</span><!--.header-->
-<TMPL_IF NAME="SEARCHFORM">
-<TMPL_VAR SEARCHFORM>
-</TMPL_IF>
-</div>
+</h1>
 
-<TMPL_IF NAME="HAVE_ACTIONS">
-<div class="actions">
-<ul>
-<TMPL_IF NAME="EDITURL">
-<li><a href="<TMPL_VAR EDITURL>" rel="nofollow">Edit</a></li>
-</TMPL_IF>
-<TMPL_IF NAME="RECENTCHANGESURL">
-<li><a href="<TMPL_VAR RECENTCHANGESURL>">RecentChanges</a></li>
-</TMPL_IF>
-<TMPL_IF NAME="HISTORYURL">
-<li><a href="<TMPL_VAR HISTORYURL>">History</a></li>
-</TMPL_IF>
-<TMPL_IF NAME="PREFSURL">
-<li><a href="<TMPL_VAR PREFSURL>">Preferences</a></li>
-</TMPL_IF>
-<TMPL_IF NAME="COMMENTSLINK">
-<li><TMPL_VAR COMMENTSLINK><br /></li>
-<TMPL_ELSE>
+<p>
+Last edited: <TMPL_VAR MTIME><br>
+Created: <TMPL_VAR CTIME>
+</p>
+
 <TMPL_IF NAME="DISCUSSIONLINK">
-<li><TMPL_VAR DISCUSSIONLINK><br /></li>
+<p>Got something to say? Join the <TMPL_VAR DISCUSSIONLINK></p>
 </TMPL_IF>
-</TMPL_IF>
-</ul>
-</div>
-</TMPL_IF>
-</div> <!-- .pageheader -->
-
-<div id="footer" class="pagefooter">
-<div id="pageinfo">
 
 <TMPL_IF NAME="TAGS">
-<div class="tags">
-Tags:
+<p>Tags:
 <TMPL_LOOP NAME="TAGS">
 <TMPL_VAR LINK>
 </TMPL_LOOP>
-</div>
+</p>
 </TMPL_IF>
 
 <TMPL_IF NAME="BACKLINKS">
-<div id="backlinks">
-Links:
+<p>Also see:
 <TMPL_LOOP NAME="BACKLINKS">
 <a href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a>
 </TMPL_LOOP>
-<TMPL_IF NAME="MORE_BACKLINKS">
-<span class="popup">...
-<span class="balloon">
-<TMPL_LOOP NAME="MORE_BACKLINKS">
-<a href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a>
-</TMPL_LOOP>
-</span>
-</span>
-</TMPL_IF>
-</div><!-- #backlinks -->
+</p>
 </TMPL_IF>
 
-<TMPL_IF COPYRIGHT>
-<div class="pagecopyright">
-<a name="pagecopyright"></a>
-<TMPL_VAR COPYRIGHT>
-</div>
-</TMPL_IF>
-
-<TMPL_IF LICENSE>
-<div class="pagelicense">
-<a name="pagelicense"></a>
-License: <TMPL_VAR LICENSE>
-</div>
-</TMPL_IF>
-
-<div class="pagedate">
-Last edited <TMPL_VAR MTIME>
-<!-- Created <TMPL_VAR CTIME> -->
-</div>
-
-</div><!-- #pageinfo -->
-<TMPL_IF EXTRAFOOTER><TMPL_VAR EXTRAFOOTER></TMPL_IF>
-<!-- from <TMPL_VAR WIKINAME> -->
-</div><!-- .pagefooter #footer -->
 </footer>
-</body>
-</html>
