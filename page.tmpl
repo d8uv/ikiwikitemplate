@@ -6,12 +6,37 @@
 <link rel="alternate" type="application/x-wiki" title="Edit this page" href="<TMPL_VAR EDITURL>" />
 </TMPL_IF>
 
+<TMPL_IF SIDEBAR>
+<div id="sidebar">
+<TMPL_VAR SIDEBAR>
+</div>
+</TMPL_IF>
+
+<div id="content">
+<TMPL_VAR CONTENT>
+</div>
+
+<TMPL_IF COMMENTS>
+<div id="comments">
+<TMPL_VAR COMMENTS>
+<TMPL_IF ADDCOMMENTURL>
+<div class="addcomment">
+<a href="<TMPL_VAR ADDCOMMENTURL>">Add a comment</a>
+</div>
+<TMPL_ELSE>
+<div class="addcomment">Comments on this page are closed.</div>
+</TMPL_IF>
+</div>
+</TMPL_IF>
+
+<footer>
+
 <div class="pageheader">
 <div class="header">
 <span>
 <span class="parentlinks">
 <TMPL_LOOP NAME="PARENTLINKS">
-<a href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a>/ 
+<a href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a>/
 </TMPL_LOOP>
 </span>
 <span class="title">
@@ -49,29 +74,6 @@
 </div>
 </TMPL_IF>
 </div> <!-- .pageheader -->
-
-<TMPL_IF SIDEBAR>
-<div id="sidebar">
-<TMPL_VAR SIDEBAR>
-</div>
-</TMPL_IF>
-
-<div id="content">
-<TMPL_VAR CONTENT>
-</div>
-
-<TMPL_IF COMMENTS>
-<div id="comments">
-<TMPL_VAR COMMENTS>
-<TMPL_IF ADDCOMMENTURL>
-<div class="addcomment">
-<a href="<TMPL_VAR ADDCOMMENTURL>">Add a comment</a>
-</div>
-<TMPL_ELSE>
-<div class="addcomment">Comments on this page are closed.</div>
-</TMPL_IF>
-</div>
-</TMPL_IF>
 
 <div id="footer" class="pagefooter">
 <div id="pageinfo">
@@ -126,6 +128,6 @@ Last edited <TMPL_VAR MTIME>
 <TMPL_IF EXTRAFOOTER><TMPL_VAR EXTRAFOOTER></TMPL_IF>
 <!-- from <TMPL_VAR WIKINAME> -->
 </div><!-- .pagefooter #footer -->
-
+</footer>
 </body>
 </html>
