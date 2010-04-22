@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+
 <TMPL_IF NAME="FORCEBASEURL">
 <base href="<TMPL_VAR FORCEBASEURL>" />
 <TMPL_ELSE>
@@ -7,6 +8,9 @@
 </TMPL_IF>
 <title><TMPL_VAR TITLE></title>
 <link rel="stylesheet" href="/doc.css">
+
+</head>
+<body>
 
 <h1><TMPL_VAR TITLE></h1>
 <TMPL_VAR PAGEBODY>
@@ -16,4 +20,3 @@
 </div>
 
 </body>
-</html>
