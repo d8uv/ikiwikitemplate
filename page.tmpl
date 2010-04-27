@@ -18,11 +18,8 @@
 <div id="footer">
 
 <h1>
-This is:
-<TMPL_LOOP NAME="PARENTLINKS">
-<a href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a>/
-</TMPL_LOOP>
-<TMPL_VAR TITLE>
+This is
+<TMPL_LOOP NAME="PARENTLINKS">/<a href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a></TMPL_LOOP>/<TMPL_VAR TITLE>
 </h1>
 
 <p>
@@ -31,6 +28,8 @@ Last edited: <TMPL_VAR MTIME>
 
 <TMPL_IF NAME="DISCUSSIONLINK">
 <p>Got something to say? Join the <TMPL_VAR DISCUSSIONLINK></p>
+<TMPL_ELSE>
+<p><a href="<TMPL_VAR EDITURL>">Edit the above</a>, and add what you think.</p>
 </TMPL_IF>
 
 <TMPL_IF NAME="TAGS">
